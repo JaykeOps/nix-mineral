@@ -929,12 +929,18 @@ imports = [ ./nm-overrides.nix ];
     "/proc" = {
       fsType = "proc";
       device = "proc";
-      options = [ "nosuid" "nodev" "noexec" "hidepid=2" "gid=proc" ];
+      options = [ 
+        "nosuid" 
+        "nodev" 
+        "noexec" 
+        "hidepid=2" 
+        "gid=${toString config.users.groups.proc.gid}" ];
     };
   };
 
   # Add "proc" group to whitelist /proc access and allow systemd-logind to view
   # /proc in order to unbreak it.
+  users.groups.proc.gid = config.ids.gids.proc;
   users.groups.proc = {};
   systemd.services.systemd-logind.serviceConfig = { SupplementaryGroups = [ "proc" ]; };
 

@@ -136,7 +136,7 @@ imports = [ ./nm-overrides.nix ];
         # Unprivileged userns has a large attack surface and has been the cause
         # of many privilege escalation vulnerabilities, but can cause breakage.
         # See overrides.
-        "kernel.unprivileged_userns_clone" = "0";
+        "kernel.unprivileged_userns_clone" = "1";
         
         # Yama restricts ptrace, which allows processes to read and modify the
         # memory of other processes. This has obvious security implications.

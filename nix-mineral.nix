@@ -298,7 +298,7 @@ imports = [ ./nm-overrides.nix ];
       
       # May break some drivers, same reason as the above. Also breaks
       # hibernation. See overrides.
-      ("lockdown=integrity")
+      ("lockdown=none")
 
       # May prevent some systems from booting. See overrides.
       ("efi=disable_early_pci_dma") 

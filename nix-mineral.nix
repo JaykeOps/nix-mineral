@@ -933,7 +933,7 @@ imports = [ ./nm-overrides.nix ];
         "nosuid" 
         "nodev" 
         "noexec" 
-        "hidepid=2" 
+        "hidepid=1" 
         "gid=${toString config.users.groups.proc.gid}" ];
     };
   };

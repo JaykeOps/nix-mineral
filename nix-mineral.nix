@@ -1012,7 +1012,7 @@ imports = [ ./nm-overrides.nix ];
     openssh = { settings = { PermitRootLogin = "no"; }; };
      
     # DNS connections will fail if not using a DNS server supporting DNSSEC.
-    resolved = { dnssec = "true"; }; 
+    resolved.settings.Resolve.DNSSEC = true;
 
     # Prevent BadUSB attacks, but requires whitelisting of USB devices. 
     usbguard = {   
